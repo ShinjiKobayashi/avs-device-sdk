@@ -166,6 +166,9 @@ private:
     /// The @c MediaPlayer used by @c NotificationsCapabilityAgent.
     std::shared_ptr<mediaPlayer::MediaPlayer> m_ringtoneMediaPlayer;
 
+    /// The @c GpioNotifyManager which perform user requests.
+    std::shared_ptr<GpioNotifyManager> m_gpioNotifyManager;
+
     using SpeakerTypeAndCreateFunc =
         std::pair<avsCommon::sdkInterfaces::SpeakerInterface::Type, MediaPlayerCreateFunction>;
 

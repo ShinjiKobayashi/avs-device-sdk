@@ -663,6 +663,10 @@ bool SampleApplication::initialize(
 
     client->addAlexaDialogStateObserver(m_interactionManager);
 
+    // create GpioNotifyManager
+    m_gpioNotifyManager = std::make_shared<alexaClientSDK::sampleApp::GpioNotifyManager>();
+    client->addAlexaDialogStateObserver(m_gpioNotifyManager);
+
     // Creating the input observer.
     m_userInputManager = alexaClientSDK::sampleApp::UserInputManager::create(m_interactionManager);
     if (!m_userInputManager) {
